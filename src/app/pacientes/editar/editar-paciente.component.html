@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <h3>Editar info do Paciente:</h3><br>
+      <form #formPaciente="ngForm">
+  
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" name="nome" #nome="ngModel" [(ngModel)]="paciente.nome" minlength="5" required> 
+          <div class="alert alert-danger" *ngIf="nome.errors && (nome.dirty || nome.touched)">
+            <div [hidden]= "!nome.errors.required">
+              Digite o nome do paciente.
+            </div>
+            <div [hidden]= "!nome.errors.minlength">
+              O nome deve conter ao menos 5 caracteres.
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="cpf">CPF:</label>
+          <input type="text" class="form-control" id="cpf" name="cpf" #cpf="ngModel" [(ngModel)]="paciente.cpf" minlength="11" maxlength="11" required> 
+          <div class="alert alert-danger" *ngIf="cpf.errors && (cpf.dirty || cpf.touched)">
+            <div [hidden]= "!cpf.errors.required">
+              Digite o CPF do paciente.
+            </div>
+            <div [hidden]= "!cpf.errors.minlength">
+              O CPF deve conter 11 dígitos.
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group text-center">
+          <input type="submit" class="btn btn-success" (click)="atualizar()" value="Atualizar" [disabled]="!formPaciente.form.valid">
+          <a class="btn btn-light" [routerLink]="['/pacientes']">
+            <i class="bi bi-chevron-left"></i> Voltar
+          </a>
+        </div>
+      </form>
+    </div>

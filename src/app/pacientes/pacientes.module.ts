@@ -5,12 +5,14 @@ import { ListarPacienteComponent } from './listar';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CadastrarPacienteComponent } from './cadastrar';
+import { EditarPacienteComponent } from './editar';
 
 
 @NgModule({
   declarations: [
     ListarPacienteComponent,
-    CadastrarPacienteComponent
+    CadastrarPacienteComponent,
+    EditarPacienteComponent
   ],
   imports: [
     CommonModule,

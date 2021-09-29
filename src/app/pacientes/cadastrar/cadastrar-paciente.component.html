@@ -1,4 +1,5 @@
-<div class="well">
+<div class="container-fluid">
+  <h3>Novo Paciente:</h3><br>
     <form #formPaciente="ngForm">
 
       <div class="form-group">
@@ -29,8 +30,8 @@
 
       <div class="form-group text-center">
         <input type="submit" class="btn btn-success" (click)="cadastrar()" value="Cadastrar" [disabled]="!formPaciente.form.valid">
-        <a class="btn btn-light">
-          <i class="bi bi-chevron-left" [routerLink]="['/pacientes']"></i> Voltar
+        <a class="btn btn-light" [routerLink]="['/pacientes']">
+          <i class="bi bi-chevron-left"></i> Voltar
         </a>
       </div>
     </form>
