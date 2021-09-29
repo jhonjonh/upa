@@ -1,0 +1,11 @@
+.atendido {
+    font-weight: 500;
+    background-color: rgb(232, 245, 232);
+    color: green !important;
+}
+
+.desativado {
+    color: grey;
+    font-weight: 200;
+    text-decoration: line-through;
+}

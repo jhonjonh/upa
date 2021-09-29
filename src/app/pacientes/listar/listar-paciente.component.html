@@ -1,0 +1,48 @@
+<br><h3>Lista de Pacientes</h3>
+<table class="table table-bordered table-hover">
+
+        <tr class="thead-light">
+            <th>Nome do Paciente</th>
+            <th>CPF</th>
+            <th hidden>Ativo</th>
+            <th>Atendido</th>
+            <th class="text-center">
+                <a class="btn btn-success small" [routerLink]="['/pacientes/cadastrar']">
+                    <i class="bi bi-plus-lg"></i> Novo
+                </a>
+            </th>
+        </tr>
+
+    <tbody>
+        <tr *ngFor="let paciente of pacientes" [class.atendido]="paciente.atendido" [class.desativado]="paciente.desativado">
+
+            <td>
+                {{ paciente.nome }}
+            </td>
+
+            <td>
+                {{ paciente.cpf }}
+            </td>
+
+            <td hidden style="width: 70px" class="text-center">
+                <input type="button" [value]="paciente.id" [checked]="paciente.desativado" (click)="desativar(paciente)" [disabled]="paciente.desativado">
+            </td>
+
+            <td style="width: 70px" class="text-center">
+                <input type="checkbox" [value]="paciente.id" [checked]="paciente.atendido" (click)="alterarAtendido(paciente)">
+            </td>
+
+            <td class="text-center btn-group-sm" style="width: 20%">
+                <a title="Editar" alt="Editar" class="btn btn-info mr-1">
+                    <i class="bi bi-pencil-square"></i> Editar
+                </a>
+                <button title="Remover" alt="Remover" class="btn btn-danger" (click)="desativar(paciente)" [disabled]="paciente.desativado">
+                    <i class="bi bi-trash"></i> Remover
+                </button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<p *ngIf="pacientes.length==0">Nenhum paciente cadastrado. Clique em 'Novo' para cadastrar o primeiro.</p>
