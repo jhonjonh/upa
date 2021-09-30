@@ -1,6 +1,6 @@
 .navbar {
-    background: linear-gradient(lightgrey, rgb(243, 240, 240));
-    box-shadow: 0px 2px 4px 1px grey;
+    background: linear-gradient(rgb(178, 214, 213), rgb(243, 240, 240));
+    box-shadow: 0px 2px 4px 1px rgb(129, 135, 131);
     margin-bottom: 4vh;
   }
   
