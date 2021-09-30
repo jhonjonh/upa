@@ -42,6 +42,7 @@
             </td>
         </tr>
     </tbody>
+<p *ngIf="pacientes.length==0">Nenhum paciente cadastrado. Clique em 'Novo' para cadastrar o primeiro.</p>
 
 </table>
     <h5 class="text-muted">Pacientes excluídos:</h5>
@@ -75,7 +76,6 @@
 
         </tr>
     </tbody>
-
 </table>
 
-<p *ngIf="pacientes.length==0">Nenhum paciente cadastrado. Clique em 'Novo' para cadastrar o primeiro.</p>
+
